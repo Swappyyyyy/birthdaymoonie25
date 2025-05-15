@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love! ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+        
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #ffb8b8;
+            --accent: #ff4757;
+            --text: #2f3542;
+            --light: #f1f2f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle, var(--secondary) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            transform: rotate(45deg);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .heart:before, .heart:after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .heart:before {
+            top: -15px;
+            left: 0;
+        }
+        
+        .heart:after {
+            top: 0;
+            left: -15px;
+        }
+        
+        @keyframes float {
+            0% { transform: rotate(45deg) translateY(0); opacity: 1; }
+            100% { transform: rotate(45deg) translateY(-100vh); opacity: 0; }
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .hero img {
+            max-width: 300px;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .hero img:hover {
+            transform: scale(1.05);
+        }
+        
+        .message {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        
+        .message h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .message p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .memories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .memory {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .memory:hover {
+            transform: translateY(-10px);
+        }
+        
+        .memory img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .memory-content {
+            padding: 20px;
+        }
+        
+        .memory h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .countdown {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+        
+        .countdown h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 100px;
+        }
+        
+        .countdown-box span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .countdown-box small {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .gift {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            background-color: var(--primary);
+            margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+            transform-origin: top center;
+        }
+        
+        .gift-box:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background-color: var(--accent);
+            top: -20px;
+            left: 0;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+        }
+        
+        .gift-box:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 100%;
+            background-color: var(--accent);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .gift-box.open {
+            transform: rotateX(180deg);
+        }
+        
+        .gift-message {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gift-message.show {
+            max-height: 2000px;
+            padding: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .countdown-container {
+                flex-wrap: wrap;
+            }
+            
+            .countdown-box {
+                min-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Floating hearts background -->
+        <div id="hearts-container"></div>
+        
+        <header>
+            <h1>Happy Birthday, My Love!</h1>
+            <p>To the most amazing, sweet, beautiful, strong and loving girlfriend and person in the world ❤️</p>
+        </header>
+        
+        <section class="hero">
+    <div class="hero-image" style="background-image: url('images/hero/girlfriend.jpg')"></div>
+    <img src="images/hero/girlfriend.jpg" alt="My Beautiful Girlfriend" id="gf-photo">
+    <p>Today is all about you, my love!</p>
+</section>
+        
+        <section class="message">
+            <h2>My Dearest Cherry,</h2>
+            <p>Happy Birthday to the most incredible girl I have ever known! Today is a celebration of you, the beautiful, loving, and caring soul who makes my world brighter every single day. On your special day, I want to take a moment to express just how much you mean to me, and how deeply grateful I am for the love you bring into my life. 
+
+From the very first moment we met, I knew there was something special about you. Your energy, your warmth, your kindness, it all radiated in a way that captivated me instantly. You are not just beautiful on the outside, but your inner beauty, your compassion, and the way you care for those around you is what makes you truly extraordinary. Your heart is the most precious thing I’ve ever known, and I feel incredibly lucky to be loved by someone as remarkable as you ❤️
+
+You have this amazing ability to make everyone feel loved and valued, including me. Every time you smile, every time you laugh, it’s like the whole world is brighter and better. You’ve shown me what it means to love deeply, to care with every part of your being, and to give selflessly. You inspire me every day with your strength, your wisdom, and your gentle spirit. Your love is a constant source of joy and comfort in my life, and I truly cannot imagine a world without you in it.
+
+I think back on all the little moments we’ve shared together, and I smile. The quiet evenings, the silly jokes, the deep conversations, and the endless support you give me, day in and day out, these are the memories I hold close to my heart. You’ve made me a better person just by being in my life, and I will forever be grateful for the way you love me, flaws and all. Your patience, understanding, and constant encouragement have been a guiding light, and I am so lucky to walk through life by your side.
+
+As you celebrate today, know that I am here for you, just as you’ve always been there for me. You deserve all the happiness in the world ❤️, and I want to do everything I can to help make this year as amazing as possible. I wish for you endless laughter, love, and success. May every day bring you closer to your dreams, and may you always be surrounded by the love and care you so generously give to others.
+
+On this special day, I want to remind you how beautiful you are, inside and out. Your spirit shines in a way that brightens everyone’s life, and I am endlessly amazed by how you handle everything with such grace and kindness. You have a heart full of love, and you deserve to be loved just as deeply in return. I will always cherish you, respect you, and be here to support you, no matter what life throws our way.
+
+Happy Birthday, my love ❤️ Thank you for being you, so caring, so loving, and so beautiful in every way. I look forward to a lifetime of more birthdays, more adventures, and more memories with you by my side. I love you more than words can ever say, and I can’t wait to see what the future holds for us. Here’s to many more years of happiness and love, together. YAYAYAYAYAYAY xD</p>
+            <p>Forever yours,</p>
+            <p>Swapnil</p>
+        </section>
+        
+              
+        <section class="photo-memories">
+    <h2 class="section-title">Our Photo Memories</h2>
+    <div class="memory-grid">
+        <div class="memory-item">
+            <img src="images/memories/memory1.jpg" alt="You">
+            <div class="memory-caption">How can someone have those beautiful eyes! ❤️</div>
+        </div>
+        <div class="memory-item">
+            <img src="images/memories/memory2.jpg" alt="Our VCs">
+            <div class="memory-caption">I love it when you become a child ❤️</div>
+        </div>
+        <div class="memory-item">
+            <img src="images/memories/memory3.jpg" alt="Randoms">
+            <div class="memory-caption">This and many more best memories with you ❤️</div>
+        </div>
+        <div class="memory-item">
+            <img src="images/memories/memory4.jpg" alt="Fit checks">
+            <div class="memory-caption">I love it when you send me a random fit check ❤️</div>
+        </div>
+        <div class="memory-item">
+            <img src="images/memories/memory5.jpg" alt="Your Eyes">
+            <div class="memory-caption">I remember falling for them, and keep falling for it everyday ❤️</div>
+        </div>
+        <div class="memory-item">
+            <img src="images/memories/memory6.jpg" alt="My eeping beauty">
+            <div class="memory-caption">The way i see you sleep like a small baby in front of me, i love it absolutely ❤️</div>
+        </div>
+        
+        <!-- Add more as needed -->
+    </div>
+</section>
+        
+                
+        
+        <section class="countdown">
+            <h2>Already an year!?!..</h2>
+            <div class="countdown-container"> 
+                <div class="countdown-box">
+                    <span id="days">98</span>
+                    <small>Days</small>
+                </div>
+            </div>
+            <p>Until we celebrate an year, and more beautiful memories together</p>
+        </section>
+        
+        <section class="gift">
+            <h2 style="font-family: 'Dancing Script', cursive; color: var(--accent);">A Special Gift For You</h2>
+            <p>Click on the gift box to reveal your surprise!</p>
+            <div class="gift-box" id="gift-box"></div>
+            <div class="gift-message" id="gift-message">
+                <h3>100 reasons of "Why i love you❤️"</h3>
+                <p>*Who You Are*
+1. You make me laugh even on bad days.  
+2. Your smile brightens my world.  
+3. You’re kind to everyone.  
+4. You’re incredibly intelligent.  
+5. You’re beautiful inside and out.  
+6. You have the biggest heart.  
+7. You’re always honest with me.  
+8. You make me feel like the luckiest person alive.  
+9. You’re strong and resilient.  
+10. You’re confident in who you are.  
+</p>
+                
+                <p>*How You Treat Me*
+11. You always support me.  
+12. You listen to me when I need to vent.  
+13. You believe in me more than I do.  
+14. You make me feel special.  
+15. You respect my opinions.  
+16. You always encourage me.  
+17. You lift me up when I feel down.  
+18. You accept me as I am.  
+19. You’re patient with me.  
+20. You forgive me when I mess up.  </p>
+                
+                <p>*Our Relationship*
+21. We have the best inside jokes. (And also some secret plans yk🤭😋)
+22. Every moment with you feels magical. 
+23. We can talk about anything. 
+24. We never run out of things to say. 
+25. You make boring days fun. 
+26. You’re my best friend. 
+27. You challenge me to grow. 
+28. You support my in every aspect.
+29. We have so many amazing memories together. 
+30. You make me feel at home </p>
+                
+              <p>*Your Little Quirks*
+31. The way you scrunch your nose when you laugh.  ( Majhi Dukki)
+32. Your cute sleepy face.  (I swear you are such a cutie)
+33. How you sing when you think no one is listening (i do listen to them, i love it obv😋)
+34. The way you play with your hair.  
+35. Your adorable reactions to things.  
+36. The way you say my name.  
+37. The way you get excited about small things.  
+38. How you greet me with your beautiful smile.
+39. Your love for your favorite foods.  
+40. The way you look at me.  </p>
+              <p>*The Things You Do*
+                  
+41. You always make time for me.  
+42. You surprise me in the best ways.  
+43. You take care of me when I’m exhausted.
+44. You love spending time with me.  
+45. You talk about our secret plans. 🤭
+46. You leave me sweet notes or texts.  
+47. Your love for movies. (So entertaining haye😋)
+48. You remember the little things I say.  
+49. You support my hobbies.  
+50. You make me feel needed.  </p>
+              <p>*How You Make Me Feel*
+                  
+51. You make me feel safe.  
+52. You make me feel loved.  
+53. You make me feel understood.  
+54. You make me feel like the most important person in the world.  
+55. You make me feel confident.  
+56. You make me feel excited for the future.  
+57. You make me feel proud of myself.  
+58. You make me feel young and free.  
+59. You make me feel like I can do anything.  
+60. You make me feel like home isn’t a place—it’s you.  </p>
+                
+              <p>*Our moments Together*
+61. Being together is always fun.  
+62. You’re always down to try new (sometimes aflatoon😭🤣) things.  
+63. Every video call with you is special.  
+64. You make the simplest calls special to me.
+65. You turn ordinary moments into unforgettable ones.  
+66. We have the best late-night talks.  
+67. You make holidays feel extra special.  
+68. Spending time with you is the best.  
+69. You make even texting more fun.  
+70. You love making memories with me.  </p>
+                
+              <p>*Your Strengths*
+71. You’re incredibly hardworking. (Even if you don't know that, yes you are)  
+72. You never give up.  
+73. You stand up for what you believe in.  
+74. You’re independent and strong-willed.  
+75. You’re always learning and growing. (Still even if you have doubts, yes you are) 
+76. You’re dedicated to your goals.  
+77. You handle challenges with grace.  
+78. You always find a way to make things work.  
+79. You don’t let negativity bring you down.  (Even after such waves of trouble, you are still here smiling, i love this strong side of yours). 
+80. You inspire me to be better.  </p>
+                
+              <p>*The Future with You*
+81. I can’t wait to see where life takes us.  
+82. You make me excited about our future.  
+83. I know you’ll be an amazing person to keep for life.  
+84. I can’t wait to cuddle with you.🤭  
+85. I know you’ll always be there for me.  
+86. I love the idea of growing old with you. (Yk talking about nostalgic moments of our first meet and friends and GCs 😋)  
+87. I want to make you the happiest person ever.  
+88. You make me believe in forever.  
+89. I know we'll keep loving and choosing each other every day.
+90. Every day with you is a gift.  </p>
+                
+              <p>*Just because*
+91. I can’t imagine my life without you.  
+92. You’re my person.  
+93. You make life better in every way.  
+94. Loving you is the easiest thing in the world.  
+95. You make my heart race.  
+96. You’re my greatest blessing.  
+97. You’re the best thing that’s ever happened to me.  
+98. I love you more every single day.  
+99. You’re my everything.  
+100. Because you’re *you*, and that’s all I could ever ask for.</p>
+              
+                <a href="#" class="btn">Redeem Your Gift</a>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Made with ❤️ by Swapnil</p>
+            <p>© Forever - All my love reserved for you</p>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 20;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                
+                // Random position
+                const left = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = 5 + Math.random() * 10;
+                
+                heart.style.left = `${left}vw`;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.animationDuration = `${duration}s`;
+                
+                // Random size
+                const size = 20 + Math.random() * 20;
+                heart.style.width = `${size}px`;
+                heart.style.height = `${size}px`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+                
+        // Gift box interaction
+        document.getElementById('gift-box').addEventListener('click', function() {
+            this.classList.toggle('open');
+            document.getElementById('gift-message').classList.toggle('show');
+        });
+        
+        // Photo hover effect
+        document.getElementById('gf-photo').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05) rotate(5deg)';
+        });
+        
+        document.getElementById('gf-photo').addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+        
+        // Initialize
+        window.onload = function() {
+            createHearts();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Personalize the page
+            document.querySelectorAll('h2, p').forEach(el => {
+                el.innerHTML = el.innerHTML.replace(/\[Her Name\]/g, 'Aanvi'); // Replace with her name
+                el.innerHTML = el.innerHTML.replace(/\[Your Name\]/g, 'Swapnil'); // Replace with your name
+            });
+        };
+    </script>
+</body>
+</html>
